@@ -18,14 +18,13 @@ repositories {
 
 dependencies {
     //HTTPのリクエスト
-    // define a BOM and its version
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
-    // define any required OkHttp artifacts without version
-    implementation("com.squareup.okhttp3:okhttp")
     //Jsonの解析
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
+    //環境変数ファイルの取得
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
 }
 
