@@ -26,6 +26,9 @@ dependencies {
 
     //環境変数ファイルの取得
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
+
+    //コルーチン
+    implementation("org.jetbrains.kotlinx", "kotlinx-coroutines-core", "1.7.3")
 }
 
 java {
