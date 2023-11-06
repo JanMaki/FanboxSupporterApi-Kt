@@ -1,6 +1,5 @@
 package net.simpletimer.fanbox_supporter_api.api
 
-import io.github.cdimascio.dotenv.dotenv
 import kotlinx.serialization.json.Json
 import net.simpletimer.fanbox_supporter_api.data.ResponseBody
 import net.simpletimer.fanbox_supporter_api.extensions.addFanboxAPIHeader
@@ -26,9 +25,6 @@ open class FanboxAPIRequest {
         ignoreUnknownKeys = true
     }
 
-    //セッション管理
-    val session: FanboxSessionImitation = FanboxSessionImitation()
-
     /**
      * FANBOXへGetをする
      *
@@ -41,7 +37,7 @@ open class FanboxAPIRequest {
         val request = Request.Builder()
             .url(url)
             .get()
-            .addFanboxAPIHeader(session)
+            .addFanboxAPIHeader(FanboxSessionImitation)
             .build()
 
         //送信
@@ -55,7 +51,7 @@ open class FanboxAPIRequest {
         val responseBody = response.body ?: return null
 
         //セッションを更新
-        session.updateSession(response)
+        FanboxSessionImitation.updateSession(response)
 
         //デコードして返す
         return json.decodeFromString<ResponseBody<T>>(responseBody.string()).body

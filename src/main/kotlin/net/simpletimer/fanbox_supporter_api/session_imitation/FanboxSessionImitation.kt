@@ -8,7 +8,7 @@ import okhttp3.Response
  *
  * @property sessionId 使用するSessionのId
  */
-class FanboxSessionImitation() {
+object FanboxSessionImitation {
     var sessionId: String = dotenv()["SESSION_ID"]
         private set
 
