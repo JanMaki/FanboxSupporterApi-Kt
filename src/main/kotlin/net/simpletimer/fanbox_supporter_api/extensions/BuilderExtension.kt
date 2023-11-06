@@ -1,5 +1,6 @@
 package net.simpletimer.fanbox_supporter_api.extensions
 
+import net.simpletimer.fanbox_supporter_api.session_imitation.FanboxSessionImitation
 import okhttp3.Request
 
 /**
@@ -9,9 +10,9 @@ import okhttp3.Request
  * @param token [String]
  * @return [Request.Builder]をそのまま返す
  */
-fun Request.Builder.addFanboxAPIHeader(token: String): Request.Builder {
+fun Request.Builder.addFanboxAPIHeader(session: FanboxSessionImitation): Request.Builder {
     this.addHeader("Origin", "https://simpletimer.fanbox.cc")
-    this.addHeader("Cookie", "FANBOXSESSID=$token")
+    this.addHeader("Cookie", "FANBOXSESSID=${session.sessionId}")
 
     return this
 }
