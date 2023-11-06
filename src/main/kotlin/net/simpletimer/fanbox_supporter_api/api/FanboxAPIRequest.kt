@@ -27,7 +27,7 @@ open class FanboxAPIRequest {
     }
 
     //セッション管理
-    val session: FanboxSessionImitation = FanboxSessionImitation(dotenv()["SESSION_ID"])
+    val session: FanboxSessionImitation = FanboxSessionImitation()
 
     /**
      * FANBOXへGetをする
