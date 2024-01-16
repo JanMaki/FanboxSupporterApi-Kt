@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.9.20"
     kotlin("plugin.serialization") version "1.9.22"
+    kotlin("jvm") version "1.9.22"
 
     id("com.github.johnrengelman.shadow") version "8.1.1"
 
@@ -22,7 +22,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
     //Jsonの解析
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
 
     //環境変数ファイルの取得
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
